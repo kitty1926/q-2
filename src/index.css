@@ -1,0 +1,218 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #63f1c7 0%, #087957 100%);
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.account-heading {
+  text-align: center;
+  font-family: 'BinnerD';
+  font-style: 'bld';
+  font-size: 2rem;
+  color: #196b35;
+  margin-bottom: 2rem;
+}
+
+
+h1,
+h2 {
+  color: #196b35;
+  text-align: center;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+.card {
+  background: rgba(17, 221, 109, 0.342);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+
+
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #afe9c2;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 10px 16px;
+  background-color: #052c16;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #259c75;
+}
+
+.user-list {
+  list-style: none;
+  padding: 0;
+}
+
+.user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f7f9fc;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Red and smaller delete button */
+.delete-btn {
+  background-color: #fd0707;
+  color: white;
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #ca4848;
+}
+
+.loader,
+.error {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background-color: transparent;
+}
+
+.user-table th,
+.user-table td {
+  border: 1px solid rgb(255, 255, 255);
+  padding: 12px 16px;
+  text-align: left;
+  background-color: transparent;
+}
+
+.user-table th {
+  background-color: rgb(185, 241, 177);
+  font-weight: bold;
+}
+
+.user-table td {
+  background-color: transparent;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: rgb(252, 252, 252);
+}
+
+.user-table tr:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .form {
+    gap: 0.75rem;
+  }
+
+  input,
+  button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .user-table {
+    font-size: 0.9rem;
+    overflow-x: auto;
+    display: block;
+  }
+
+  .user-table thead {
+    display: none;
+  }
+
+  .user-table tr {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 1rem;
+  }
+
+  .user-table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border: none;
+  }
+
+  .user-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #555;
+  }
+
+  .delete-btn {
+    width: 100%;
+  }
+}
